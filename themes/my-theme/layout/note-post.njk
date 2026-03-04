@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} - {{ config.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- 折叠功能样式 -->
+    <style>
+    /* 页面基础样式 */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        background: #fff;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    /* 文章头部 */
+    .content-header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .content-header h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #212529;
+    }
+
+    .post-meta {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    /* 二级折叠样式 */
+    /* 折叠项样式 - 整行可点击 */
+    /* 折叠项样式 - 整行可点击 */
+.faq-item {
+    margin: 15px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 15px 20px;
+    background: #f0f0f0;  /* 浅灰色背景 */
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    transition: background 0.2s;
+    border-radius: 8px;
+}
+
+.faq-question:hover {
+    background: #e0e0e0;  /* 悬停时稍深一点 */
+}
+
+/* 去掉小箭头 */
+.faq-question::after {
+    display: none;
+}
+
+/* 展开的内容区域 - 浅灰色底色 */
+.faq-answer {
+    display: none;
+    padding: 20px;
+    background: #f8f8f8;  /* 浅灰色底色 */
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+}
+
+.faq-item.active .faq-question {
+    border-radius: 8px 8px 0 0;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}		
+    /* 章节样式 */
+    .chapter {
+        margin: 30px 0;
+    }
+
+    .chapter h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #dc3545;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+    }
+
+    .chapter-intro {
+        color: #6c757d;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+
+    /* 代码块样式 */
+    .faq-answer pre {
+        background: #f5f5f5;
+        padding: 12px;
+        border-radius: 6px;
+        overflow-x: auto;
+    }
+
+    .faq-answer code {
+        font-family: 'Courier New', monospace;
+    }
+
+    .faq-answer h4 {
+        margin: 1em 0 0.5em;
+        color: #495057;
+    }
+
+    .faq-answer ul, .faq-answer ol {
+        margin: 0.5em 0 1em;
+        padding-left: 20px;
+    }
+
+    /* 返回链接 */
+    .back-link {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e9ecef;
+        text-align: center;
+    }
+
+    .back-link a {
+        color: #dc3545;
+        text-decoration: none;
+    }
+
+    .back-link a:hover {
+        text-decoration: underline;
+    }
+/* 有序小标题样式 */
+.faq-answer .numbered-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1em 0;
+}
+
+.faq-answer .numbered-list li {
+    margin-bottom: 1.5em;
+}
+
+.faq-answer .numbered-list h4 {
+    margin: 0 0 0.5em 0;
+    color: #2c5e2e;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-left: 3px solid #2e6b5e;
+    padding-left: 10px;
+}
+
+.faq-answer .numbered-list p {
+    margin: 0 0 0.5em 0;
+    line-height: 1.6;
+    color: #333;
+}
+    </style>
+</head>
+<body>
+    <!-- 简单头部，只保留标题 -->
+    <header class="content-header">
+        <h1>{{ page.title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ page.date.format('YYYY-MM-DD') }}">发表于 {{ page.date.format('YYYY年MM月DD日') }}</time>
+            {% if page.updated %}
+            <span class="post-updated">更新于 {{ page.updated.format('YYYY年MM月DD日') }}</span>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- 文章内容 -->
+    <article class="post-body">
+        {{ page.content }}
+    </article>
+
+    <!-- 返回笔记列表 -->
+    <div class="back-link">
+        <a href="/note/">← 返回笔记列表</a>
+    </div>
+
+    <!-- 折叠功能JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const questions = document.querySelectorAll('.faq-question');
+        
+        questions.forEach(function(question) {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html>

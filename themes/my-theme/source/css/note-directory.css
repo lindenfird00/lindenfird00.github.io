@@ -1,0 +1,140 @@
+/* note目录页专用样式 - 森林深色主题 */
+body {
+    background-color: #f4f7f6;  /* 深色背景 */
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+}
+
+/* 内容容器 */
+.note-directory-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #ffffff;  /* 下方目录文字颜色 */
+}
+
+/* 顶部导航栏 */
+.directory-header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f4f7f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.directory-header h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+    color: #fffffff;  /* 上方导航栏字颜色 */
+}
+
+/* 导航链接 */
+.home-link {
+    color: #ffffff;  /* 导航栏字颜色 */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.home-link:hover {
+    color: #ffffff;  /* 悬停变白 */
+}
+
+/* 目录内容 */
+.directory-content {
+    line-height: 1.8;
+}
+
+.directory-content h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #ffffff;  /* 章节标题用导航栏颜色 */
+    margin: 2rem 0 1rem;
+    border-bottom: 1px solid #2a3a1a;
+    padding-bottom: 0.3rem;
+}
+
+/* 笔记列表 */
+.directory-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.directory-content li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: baseline;
+    color: #ffffff;  /* 列表文字颜色 */
+}
+
+/* 日期样式（如果有） */
+.directory-content li time {
+    width: 100px;
+    color: #f4f7f6;  /* 比正文稍浅的绿色 */
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* 笔记链接 */
+.directory-content li a {
+    color: #ffffff;  /* 下方目录文字颜色 */
+    text-decoration: none;
+    font-size: 1.2rem;
+    flex: 1;
+    transition: color 0.2s;
+}
+
+.directory-content li a:hover {
+    color: white;  /* 悬停变白 */
+}
+
+/* 描述文字（如果有） */
+.directory-content li .desc {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    font-style: italic;
+}
+
+/* 页脚 */
+.directory-footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #2a3a1a;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+    .directory-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .directory-header h1 {
+        font-size: 2rem;
+    }
+    
+    .directory-content li {
+        flex-direction: column;
+    }
+    
+    .directory-content li time {
+        width: auto;
+        margin-bottom: 3px;
+    }
+    
+    .directory-content li .desc {
+        margin-left: 0;
+        margin-top: 3px;
+    }
+}

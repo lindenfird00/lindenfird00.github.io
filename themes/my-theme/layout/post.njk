@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} - {{ config.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/footnote.css">
+</head>
+<body class="post-page">
+    <header class="post-header">
+        <h1><a href="/" style="text-decoration: none; color: #1d1d1f;">{{ config.title }}</a></h1>
+        <nav class="post-nav">
+            <a href="/">首页</a>
+            <a href="/note/">笔记</a>
+            <a href="/oasis/">oasis</a>
+            <a href="/inspire/">inspire</a>
+            <a href="/me/">me</a>
+        </nav>
+    </header>
+
+    <main class="post-main">
+        <article class="post-article">
+            <h1 class="post-title">{{ page.title }}</h1>
+            
+            <div class="post-meta">
+                <time datetime="{{ page.date.format('YYYY-MM-DD') }}">
+                    发表于 {{ page.date.format('YYYY年MM月DD日') }}
+                </time>
+                {% if page.updated %}
+                <span class="post-updated">
+                    更新于 {{ page.updated.format('YYYY年MM月DD日') }}
+                </span>
+                {% endif %}
+            </div>
+
+            <div class="post-content">
+                {{ page.content }}
+            </div>
+        </article>
+    </main>
+
+    <footer class="post-footer">
+        <p>&copy; {{ config.author }} | Powered by Hexo</p>
+    </footer>
+    <script src="/js/footnote.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} - {{ config.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="note-page">
+    <main>
+        <h1>{{ page.title }}</h1>
+        
+        {# 这里的内容会从 markdown 文件中读取 #}
+        <div class="note-content">
+            {{ page.content }}
+        </div>
+    </main>
+</body>
+</html>

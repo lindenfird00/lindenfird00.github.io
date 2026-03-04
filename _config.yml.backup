@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Linden's Blog
+title: Hexo
 subtitle: ''
 description: ''
 keywords:
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: my-theme
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
