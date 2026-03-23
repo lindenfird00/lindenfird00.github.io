@@ -1,140 +1,281 @@
-/* note目录页专用样式 - 森林深色主题 */
-body {
-    background-color: #f4f7f6;  /* 深色背景 */
+/* ===== 模块化卡片布局 ===== */
+.note-directory-page {
+    background-color: #f5f5f7;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    min-height: 100vh;
+    color: #1d1d1f;
 }
 
-/* 内容容器 */
-.note-directory-page {
-    max-width: 800px;
+/* 双栏容器 */
+.directory-container {
+    max-width: 1280px;
     margin: 0 auto;
     padding: 40px 20px;
-    color: #ffffff;  /* 下方目录文字颜色 */
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-/* 顶部导航栏 */
+/* ===== 左侧归档栏 ===== */
+.archive-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #e9ecef;
+}
+
+.archive-sidebar h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2e6b2e;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.archive-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.archive-sidebar li {
+    margin-bottom: 0.75rem;
+}
+
+.archive-sidebar a {
+    color: #4a5b4a;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.archive-sidebar a:hover {
+    color: #2e6b2e;
+    font-weight: 500;
+}
+
+/* ===== 右侧主内容区 ===== */
+.directory-main {
+    flex: 1;
+    min-width: 0; /* 防止溢出 */
+}
+
 .directory-header {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f4f7f6;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d2d2d7;
 }
 
 .directory-header h1 {
-    font-size: 2.5rem;
-    font-weight: 500;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #1d1d1f;
     margin: 0;
-    color: #fffffff;  /* 上方导航栏字颜色 */
 }
 
-/* 导航链接 */
 .home-link {
-    color: #ffffff;  /* 导航栏字颜色 */
+    color: #6c757d;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: color 0.2s;
 }
 
 .home-link:hover {
-    color: #ffffff;  /* 悬停变白 */
+    color: #2e6b2e;
 }
 
-/* 目录内容 */
-.directory-content {
-    line-height: 1.8;
-}
-
-.directory-content h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #ffffff;  /* 章节标题用导航栏颜色 */
-    margin: 2rem 0 1rem;
-    border-bottom: 1px solid #2a3a1a;
-    padding-bottom: 0.3rem;
-}
-
-/* 笔记列表 */
+/* ===== 卡片网格（文章列表） ===== */
 .directory-content ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 2rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .directory-content li {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: baseline;
-    color: #ffffff;  /* 列表文字颜色 */
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e9ecef;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
-/* 日期样式（如果有） */
-.directory-content li time {
-    width: 100px;
-    color: #f4f7f6;  /* 比正文稍浅的绿色 */
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    flex-shrink: 0;
+.directory-content li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px -12px rgba(0,0,0,0.12);
+    border-color: #cfdfcf;
 }
 
-/* 笔记链接 */
+/* 卡片内部链接 */
 .directory-content li a {
-    color: #ffffff;  /* 下方目录文字颜色 */
+    display: block;
+    padding: 24px 28px;
     text-decoration: none;
-    font-size: 1.2rem;
-    flex: 1;
-    transition: color 0.2s;
+    color: #1d1d1f;
+}
+
+.directory-content li a:link,
+.directory-content li a:visited {
+    color: #1d1d1f;
 }
 
 .directory-content li a:hover {
-    color: white;  /* 悬停变白 */
+    color: #2e6b2e;
 }
 
-/* 描述文字（如果有） */
+/* 标题 */
+.directory-content li a strong {
+    font-size: 1.35rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+
+/* 描述/摘要 */
 .directory-content li .desc {
-    color: #ffffff;
     font-size: 0.9rem;
-    margin-left: 1rem;
-    font-style: italic;
+    color: #6c757d;
+    line-height: 1.45;
+    margin-top: 8px;
+    display: block;
 }
 
-/* 页脚 */
+/* 日期 */
+.directory-content li time {
+    font-size: 0.75rem;
+    color: #8f9c8f;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* ===== 页脚 ===== */
 .directory-footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #2a3a1a;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
     text-align: center;
-    color: #ffffff;
-    font-size: 0.9rem;
+    color: #8a9b8a;
+    font-size: 0.8rem;
+    border-top: 1px solid #e2e6e2;
 }
 
 /* 响应式 */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .directory-container {
+        flex-direction: column;
+        padding: 24px 16px;
+        gap: 24px;
+    }
+
+    .archive-sidebar {
+        width: 100%;
+        position: static;
+    }
+
     .directory-header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        gap: 12px;
     }
-    
-    .directory-header h1 {
-        font-size: 2rem;
+
+    .directory-content li a {
+        padding: 18px 20px;
     }
-    
-    .directory-content li {
+
+    .directory-content li a strong {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ===== oasis 专用卡片样式（带图片） ===== */
+
+/* 卡片容器（flex 布局，左图右文） */
+.card-item {
+    display: flex;
+    gap: 20px;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e9ecef;
+    padding: 16px;
+    margin-bottom: 24px;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px -12px rgba(0,0,0,0.12);
+    border-color: #cfdfcf;
+}
+
+/* 左侧图片 */
+.card-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 16px;
+    flex-shrink: 0;
+    background-color: #f0f2f0;
+}
+
+/* 右侧内容区 */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.card-content a:hover {
+    color: #2e6b2e;
+}
+
+.card-content .desc {
+    font-size: 0.9rem;
+    color: #5a6e5a;
+    line-height: 1.4;
+    margin: 6px 0;
+}
+
+.card-content time {
+    font-size: 0.7rem;
+    color: #8f9c8f;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* 响应式：小屏幕时图片在上 */
+@media (max-width: 600px) {
+    .card-item {
         flex-direction: column;
     }
-    
-    .directory-content li time {
-        width: auto;
-        margin-bottom: 3px;
-    }
-    
-    .directory-content li .desc {
-        margin-left: 0;
-        margin-top: 3px;
+    .card-img {
+        width: 100%;
+        height: 180px;
     }
 }
