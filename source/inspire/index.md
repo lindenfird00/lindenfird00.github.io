@@ -7,18 +7,22 @@ date: 2026-03-26
 <!-- 摄影作品板块 -->
 <div class="section" id="section-photo">
   <div class="section-content">
-    <h2>📷 摄影作品</h2>
+    <h2>Photography</h2>
     <div class="slider-container">
       <button class="slider-btn prev" data-slider="photo">❮</button>
       <div class="slider-track" id="photo-track">
-        <div class="slide">
-          <img src="/images/inspire/photo1.jpg" alt="摄影作品1">
-          <p class="caption">标题 / 拍摄地点 / 时间</p>
-        </div>
-        <div class="slide">
-          <img src="/images/inspire/photo2.jpg" alt="摄影作品2">
-          <p class="caption">标题 / 拍摄地点 / 时间</p>
-        </div>
+<div class="slide">
+  <img src="/images/inspire/photo1.jpg" alt="摄影作品">
+  <div class="slide-info">
+    <p>作品标题 / 拍摄地点 · 年份</p>
+  </div>
+</div>
+<div class="slide">
+  <img src="/images/inspire/photo2.jpg" alt="摄影作品">
+  <div class="slide-info">
+    <p>作品标题 / 拍摄地点 · 年份</p>
+  </div>
+</div>
         <!-- 继续添加更多幻灯片 -->
       </div>
       <button class="slider-btn next" data-slider="photo">❯</button>
@@ -29,18 +33,22 @@ date: 2026-03-26
 <!-- 画作板块 -->
 <div class="section" id="section-painting">
   <div class="section-content">
-    <h2>🎨 画作</h2>
+    <h2>Painting</h2>
     <div class="slider-container">
       <button class="slider-btn prev" data-slider="painting">❮</button>
       <div class="slider-track" id="painting-track">
-        <div class="slide">
-          <img src="/images/inspire/painting1.jpg" alt="画作1">
-          <p class="caption">画作名称 / 作者 / 时间</p>
-        </div>
-        <div class="slide">
-          <img src="/images/inspire/painting2.jpg" alt="画作2">
-          <p class="caption">画作名称 / 作者 / 时间</p>
-        </div>
+<div class="slide">
+  <img src="/images/inspire/painting1.jpg" alt="画作">
+  <div class="slide-info">
+    <p>作品标题 / 作者</p>
+  </div>
+</div>
+<div class="slide">
+  <img src="/images/inspire/painting.jpg" alt="画作">
+  <div class="slide-info">
+    <p>作品标题 / 作者</p>
+  </div>
+</div>
       </div>
       <button class="slider-btn next" data-slider="painting">❯</button>
     </div>
@@ -50,7 +58,7 @@ date: 2026-03-26
 <!-- 诗歌板块 -->
 <div class="section" id="section-poem">
   <div class="section-content">
-    <h2>📜 诗歌</h2>
+    <h2>Poetry</h2>
     <div class="scrollable-cards">
       <div class="card">
         <h3>每当我害怕</h3>
@@ -70,7 +78,7 @@ date: 2026-03-26
 <!-- 乐曲板块 -->
 <div class="section" id="section-music">
   <div class="section-content">
-    <h2>🎵 乐曲</h2>
+    <h2>Music</h2>
     <div class="scrollable-cards">
       <div class="card music-card">
         <h3>曲名</h3>
@@ -89,7 +97,7 @@ date: 2026-03-26
 <!-- 书籍文摘板块 -->
 <div class="section" id="section-books">
   <div class="section-content">
-    <h2>📖 书籍文摘</h2>
+    <h2>Books</h2>
     <div class="scrollable-cards">
       <div class="card book-card">
         <h3>《书名》</h3>
