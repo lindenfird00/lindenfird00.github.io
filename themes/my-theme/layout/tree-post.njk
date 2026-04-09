@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} - {{ config.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+<style>
+    /* ===== 行道树页面专用样式 ===== */
+    
+    /* 页面布局 */
+    .tree-page {
+        background: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tree-main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 2rem 4rem;
+    }
+
+    /* 页面头部 */
+    .content-header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .content-header h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #212529;
+    }
+
+    .post-meta {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    /* 行道树卡片 - 独立卡片，直角 */
+    .tree-card {
+        background: #f5f5f7;
+        border: none;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        border-radius: 0;  /* 直角 */
+    }
+
+    /* 幻灯片容器 */
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .slideshow-track {
+        display: flex;
+        transition: transform 0.4s ease;
+    }
+
+    .slide-item {
+        flex: 0 0 100%;
+    }
+
+    .slide-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* 幻灯片按钮 */
+    .slideshow-prev,
+    .slideshow-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        z-index: 10;
+    }
+
+    .slideshow-prev { left: 12px; }
+    .slideshow-next { right: 12px; }
+
+    /* 指示点 */
+    .slideshow-dots {
+        text-align: center;
+        padding: 10px 0;
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .slideshow-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+
+    .slideshow-dot.active {
+        background: white;
+    }
+
+    /* 植物信息区域 */
+    .tree-info {
+        padding: 1.2rem 1.5rem 1.5rem;
+    }
+
+    /* 拍摄时间地点 - 保持原色 */
+    .tree-meta {
+        font-size: 0.8rem;
+        color: #8a9b8a;
+        margin: 0 0 0.5rem 0;
+        text-align: right;
+    }
+
+    /* 植物名称 - 黑色 */
+    .tree-info h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #000000;
+        margin: 0 0 0.3rem 0;
+    }
+
+    /* 拉丁学名 - 保持原色 */
+    .tree-scientific {
+        font-size: 0.85rem;
+        color: #6c7a6c;
+        margin: 0 0 0.8rem 0;
+        border-bottom: 1px dashed #d0e0d0;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    /* 植物描述 - 黑色 */
+    .tree-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #000000;
+        margin: 0 0 0.5rem 0;
+    }
+
+    /* 便签样式 - 白色底，直角 */
+    .tree-note-sticker {
+        position: relative;
+        background: #ffffff;
+        padding: 1rem 1.2rem;
+        margin-top: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        border-radius: 0;
+    }
+
+    .tree-note-sticker::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-width: 0 20px 20px 0;
+        border-style: solid;
+        border-color: transparent #e8e8ed transparent transparent;
+    }
+
+    .tree-note-sticker p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #333333;
+    }
+
+    /* 返回链接 */
+    .back-link {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e9ecef;
+        text-align: center;
+    }
+
+    .back-link a {
+        color: #2e6b2e;
+        text-decoration: none;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+        .tree-main {
+            padding: 1rem;
+        }
+        .tree-info {
+            padding: 1rem;
+        }
+        .tree-info h3 {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+</head>
+<body class="tree-page">
+    <main class="tree-main">
+        <!-- 页面头部 -->
+        <header class="content-header">
+            <h1>{{ page.title }}</h1>
+            <div class="post-meta">
+                <time datetime="{{ page.date.format('YYYY-MM-DD') }}">发表于 {{ page.date.format('YYYY年MM月DD日') }}</time>
+                {% if page.updated %}
+                <span class="post-updated">更新于 {{ page.updated.format('YYYY年MM月DD日') }}</span>
+                {% endif %}
+            </div>
+        </header>
+
+        <!-- 文章内容 -->
+        {{ page.content }}
+
+        <!-- 返回链接 -->
+        <div class="back-link">
+            <a href="/oasis/">← 返回 Oasis</a>
+        </div>
+    </main>
+
+    <script src="/js/plant-slideshow.js"></script>
+</body>
+</html>

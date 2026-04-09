@@ -263,7 +263,7 @@ date: 2026-04-01
   </div>
   <div class="plant-info">
     <p class="plant-meta"> Shengsi Zhoushan · June 6, 2025</p>
-    <h3>翠芦莉</h3>
+    <h3>紫叶毛地黄钓钟柳</h3>
     <p class="plant-scientific"><em>Penstemon digitalis 'Husker Red'</em></p>
     <p class="plant-desc">紫叶毛地黄钓钟柳属于车前科（Plantaginaceae）钓钟柳属，花序形态与毛地黄（Digitalis purpurea）相似，但毛地黄全株剧毒。</p>
   </div>
@@ -410,7 +410,7 @@ date: 2026-04-01
     <div class="slideshow-container" data-slideshow="繁星花">
       <div class="slideshow-track">
         <div class="slide-item">
-          <img src="/images/oasis/ye/fanxinghua1.jpeg" alt="繁星花">
+          <img src="/images/oasis/ye/fanxinghua.jpeg" alt="繁星花">
         </div>
         <div class="slide-item">
           <img src="/images/oasis/ye/fanxinghua1.jpeg" alt="繁星花局部">
@@ -554,7 +554,7 @@ date: 2026-04-01
   <div class="plant-info">
     <p class="plant-meta"> Shengsi Zhoushan · April 24, 2025</p>
     <h3>胡颓子</h3>
-    <p class="plant-scientific"><em>Elaeagnus pungens Thunb.em></p>
+    <p class="plant-scientific"><em>Elaeagnus pungens Thunb.</em></p>
     <p class="plant-desc">胡颓子属于胡颓子科（Elaeagnaceae）胡颓子属，秋冬开花，春夏结实，果实别称“羊奶果”，成熟后为红褐色，富含VC且酸甜可口，是鸟类重要的食物来源。</p>
     <p class="plant-desc">在浙江舟山等地，渔民出海时常带一小瓶胡颓子根粉，以备外伤止血之需，胡颓子叶与鱼腥草、夏枯草同煮当茶喝，用于预防和治疗感冒。</p>
   </div>

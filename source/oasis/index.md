@@ -32,3 +32,11 @@ layout: note-directory
   </div>
 </div>
 
+<div class="card-item">
+  <img src="/images/oasis/streettree/yangshudongji1.jpeg" alt="杨树" class="card-img">
+  <div class="card-content">
+    <a href="/oasis/streettree/"><strong>行道树</strong></a>
+    <span class="desc">“它们既不来自东德，也不来自罗马尼亚，而是来自河北易县。那时的园林工作者对它们有一个评价：‘漂亮得令人窒息’。”</span>
+    <time>2026-04-08</time>
+  </div>
+</div>
